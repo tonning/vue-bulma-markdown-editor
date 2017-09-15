@@ -1,6 +1,6 @@
 {
   "name": "vue-bulma-markdown-editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Vue and Bulma specific package for adding a markdown editor with preview.",
   "main": "dist/index.min.js",
   "scripts": {
