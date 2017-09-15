@@ -1,0 +1,31 @@
+{
+  "name": "vue-bulma-markdown-editor",
+  "version": "1.0.0",
+  "description": "A Vue and Bulma specific package for adding a markdown editor with preview.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tonning/vue-bulma-markdown-editor.git"
+  },
+  "keywords": [
+    "Vue",
+    "vue.js",
+    "bulma",
+    "markdown",
+    "editor"
+  ],
+  "author": "Kristoffer Tonning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tonning/vue-bulma-markdown-editor/issues"
+  },
+  "homepage": "https://github.com/tonning/vue-bulma-markdown-editor#readme",
+  "dependencies": {
+    "bulma": "^0.5.2",
+    "marked": "^0.3.6",
+    "vue": "^2.4.4"
+  }
+}
