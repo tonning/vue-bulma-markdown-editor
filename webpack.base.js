@@ -3,8 +3,11 @@ module.exports = {
         rules: [
             {
                 test: /\.js/,
-                loaders: ['babel-loader'],
+                loader: 'babel-loader',
                 exclude: /node_modules/,
+                query: {
+                    presets: ['es2015'],
+                }
             },
             {
                 test: /\.vue$/,
