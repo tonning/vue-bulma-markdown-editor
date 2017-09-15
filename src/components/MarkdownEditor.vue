@@ -52,7 +52,7 @@
     import AutosizeTextarea from './AutosizeTextarea.vue'
     import Markdown from './Markdown.vue'
     import MarkdownIt from 'markdown-it'
-    import MarkdownItAttrs from 'markdown-it-attrs'
+    import MarkdownItAttrs from 'markdown-it-attrs/markdown-it-attrs.browser.js'
     import Moment from 'moment'
 
     export default {
