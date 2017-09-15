@@ -1,4 +1,4 @@
-import MarkdownEditor from './components/MarkdownEditor'
+import MarkdownEditor from './components/MarkdownEditor.vue'
 
 export default {
     install(Vue) {
