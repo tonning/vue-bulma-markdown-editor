@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
     module: {
         rules: [
@@ -15,6 +17,20 @@ module.exports = {
     },
 
     resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js',
+        },
         extensions: ['.js', '.vue'],
     },
+
+    externals: [
+        'vue', 'moment', 'axios'
+    ],
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true,
+        }),
+    ],
 };

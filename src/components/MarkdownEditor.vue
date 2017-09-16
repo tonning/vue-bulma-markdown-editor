@@ -48,7 +48,7 @@
 
 <script>
     import _ from 'lodash'
-    import * as MarkdownReferences from '../cheatsheets/cheatsheet'
+    import * as MarkdownReferences from '../cheatsheets/cheatsheet.min'
     import AutosizeTextarea from './AutosizeTextarea.vue'
     import Markdown from './Markdown.vue'
     import MarkdownIt from 'markdown-it'
