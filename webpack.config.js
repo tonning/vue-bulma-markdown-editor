@@ -2,27 +2,35 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-module.exports = [
-    merge(require('./webpack.base'), {
-        entry: path.resolve(__dirname + '/src/index.js'),
+module.exports = merge(require('./webpack.base'), {
+    context: __dirname,
 
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'vue-bulma-markdown-editor.min.js',
-            libraryTarget: 'window',
-            library: 'MarkdownEditor',
-        }
-    }),
+    entry: {
+        'index': './src/index.js',
+        'index.min': './src/index.js',
+    },
 
-    merge(require('./webpack.base'), {
-        entry: path.resolve(__dirname + '/src/components/MarkdownEditor.vue'),
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        library: 'vue-bulma-markdown-editor',
+        libraryTarget: 'umd',
+    },
 
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'vue-bulma-markdown-editor.js',
-            libraryTarget: 'umd',
-            library: 'vue-bulma-markdown-editor',
-            umdNamedDefine: true
-        }
-    })
-];
+    externals: [
+        'vue', 'moment', 'axios'
+    ],
+
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js',
+        },
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true,
+        }),
+    ],
+});
