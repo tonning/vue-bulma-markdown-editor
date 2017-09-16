@@ -1,9 +1,7 @@
 import MarkdownEditor from './components/MarkdownEditor.vue'
 
-export default {
-    install(Vue) {
+module.exports = {
+    install: function (Vue, options) {
         Vue.component('markdown-editor', MarkdownEditor);
-    },
+    }
 };
-
-export { MarkdownEditor };

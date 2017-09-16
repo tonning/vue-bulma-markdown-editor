@@ -3,6 +3,7 @@
   "version": "1.0.6",
   "description": "A Vue and Bulma specific package for adding a markdown editor with preview.",
   "main": "dist/index.min.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production webpack",
     "demo": "NODE_ENV=production webpack --config docs/webpack.config.js",
