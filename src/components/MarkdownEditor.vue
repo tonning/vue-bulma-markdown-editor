@@ -8,7 +8,7 @@
             </ul>
         </div>
         <div>
-            <div v-show="activeTab == 'content'">
+            <div v-show="activeTab == 'content'" id="markdown-editor">
                 <keep-alive>
                     <autosize-textarea :name="name" :onChange="handleChange" :content="body" classes="textarea"></autosize-textarea>
                 </keep-alive>
@@ -17,9 +17,9 @@
                 </transition>
             </div>
 
-            <div v-if="activeTab == 'preview'" class="box content" v-html="rendered"></div>
+            <div v-if="activeTab == 'preview'" id="markdown-editor-preview" class="box content" v-html="rendered"></div>
 
-            <div v-if="activeTab == 'cheat-sheet'">
+            <div v-if="activeTab == 'cheat-sheet'" id="markdown-editor-cheatsheets">
                 <div class="tabs is-toggle is-fullwidth is-small">
                     <ul>
                         <li @click="setActiveCheatSheetTab('headings')" :class="{'is-active': activeCheatSheetTab == 'headings'}"><a>Headings</a></li>
@@ -48,7 +48,7 @@
 
 <script>
     import _ from 'lodash'
-    import * as MarkdownReferences from '../cheatsheets/cheatsheet.min'
+    import * as MarkdownReferences from './cheatsheet.js'
     import AutosizeTextarea from './AutosizeTextarea.vue'
     import Markdown from './Markdown.vue'
     import MarkdownIt from 'markdown-it'
