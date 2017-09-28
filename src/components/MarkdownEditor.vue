@@ -12,9 +12,15 @@
                 <keep-alive>
                     <autosize-textarea :name="name" :onChange="handleChange" :content="body" classes="textarea"></autosize-textarea>
                 </keep-alive>
+
                 <transition name="fade">
-                    <p class="help" v-show="showSaved">Last auto saved at {{ lastSavedAt }}</p>
+                    <p class="help is-pulled-left" style="padding-left: 10px;" v-show="showSaved">Last auto saved at {{ lastSavedAt }}</p>
                 </transition>
+
+                <div class="field is-pulled-right" style="min-width: 140px;">
+                    <input id="markdown-autosave" type="checkbox" name="markdown-autosave" class="switch is-thin" :checked="autosave" v-model="autosaveIsActive">
+                    <label for="markdown-autosave" style="font-size: 0.7rem; padding-top: 0.3rem;">Autosave {{ autosaveStatusText }}</label>
+                </div>
             </div>
 
             <div v-if="activeTab == 'preview'" id="markdown-editor-preview" class="box content" v-html="rendered"></div>
@@ -62,6 +68,10 @@
         },
 
         computed: {
+            autosaveStatusText() {
+                return this.autosaveIsActive ? 'On' : 'Off'
+            },
+
             rendered() {
                 let md = new MarkdownIt(this.options)
                     .use(MarkdownItAttrs);
@@ -78,6 +88,7 @@
                 markdownReferences: MarkdownReferences,
                 showSaved: false,
                 lastSavedAt: null,
+                autosaveIsActive: this.autosave
             }
         },
 
@@ -85,7 +96,7 @@
             handleChange(e) {
                 this.body = e.target.value
 
-                if (this.autosave) {
+                if (this.autosaveIsActive) {
                     this.save()
                 }
             },
@@ -155,3 +166,8 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @import "~bulma/sass/utilities/variables.sass";
+    @import "~bulma-switch/switch.sass";
+</style>

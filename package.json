@@ -49,6 +49,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "bulma": "^0.5.2",
+    "bulma-switch": "^0.0.3",
     "lodash": "^4.17.4",
     "markdown-it": "^8.4.0",
     "markdown-it-attrs": "^1.2.0",
