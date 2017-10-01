@@ -9,7 +9,7 @@
     "demo": "NODE_ENV=production webpack --config docs/webpack.config.js",
     "start": "webpack-dev-server --config docs/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
