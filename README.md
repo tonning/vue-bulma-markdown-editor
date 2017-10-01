@@ -1,7 +1,7 @@
 # Vue Bulma Markdown Editor
 A Vue and Bulma specific package for adding a markdown editor with preview.
 
-### Installation
+## Installation
 Pull it in to your package.json file
 
 ```
@@ -14,7 +14,7 @@ or
 yarn add vue-bulma-markdown-editor
 ```
 
-### Usage
+## Usage
 ```
 import { MarkdownEditor } from 'vue-bulma-markdown-editor'
 Vue.component('markdown-editor', MarkdownEditor)
@@ -24,7 +24,7 @@ Vue.component('markdown-editor', MarkdownEditor)
 | name | type | required | default | description |
 | :--- | ---- | ---------| ------- | ----------- |
 | name | `String` | `true` | `null` | The name of the textarea |
-| content | `String` | `false` | `''` | Defatult content |
+| content | `String` | `false` | `''` | Default content |
 | autosave | `Boolean` | `false` | `false` | If it should autosave |
 | autosaveUrl | `String` | `false` | `null` | The url endpoint to autosave |
 | autosaveMethod | `String` | `false` | `patch` | The rest verb for submitting the request |
