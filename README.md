@@ -26,6 +26,7 @@ Vue.component('markdown-editor', MarkdownEditor)
 | name | `String` | `true` | `null` | The name of the textarea |
 | content | `String` | `false` | `''` | Default content |
 | autosave | `Boolean` | `false` | `false` | If it should autosave |
+| autosaveSwitchVisible | `Boolean` | `false` | `true` | If the autosave switch should be shown in the bottom part of the editor |
 | autosaveUrl | `String` | `false` | `null` | The url endpoint to autosave |
 | autosaveMethod | `String` | `false` | `patch` | The rest verb for submitting the request |
 | options | `Object` | `false` | `{ html: true, linkify: true, breaks: true }` | Options to pass to `markdown-it`. See more at [markdown-it documentation](https://github.com/markdown-it/markdown-it)
