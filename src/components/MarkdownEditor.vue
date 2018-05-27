@@ -67,6 +67,11 @@
             Markdown,
         },
 
+        model: {
+          prop: 'content',
+          event: 'change'
+        },
+
         computed: {
             autosaveStatusText() {
                 return this.autosaveIsActive ? 'On' : 'Off'
@@ -96,6 +101,8 @@
         methods: {
             handleChange(e) {
                 this.body = e.target.value
+
+                this.$emit('change', this.body)
 
                 if (this.autosaveIsActive) {
                     this.save()
