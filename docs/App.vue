@@ -10,6 +10,12 @@
       <div class="content" v-html="rendered">
       </div>
     </section>
+      <p class="control">
+        <button class="button is-primary"
+                @click="reset">
+          Reset
+        </button>
+      </p>
   </div>
 </template>
 
@@ -29,6 +35,11 @@
       rendered: function () {
         var mdRenderer = new MarkdownIt()
         return mdRenderer.render(this.contentRaw)
+      }
+    },
+    methods: {
+      reset () {
+        this.contentRaw = ''
       }
     }
   }

@@ -23,7 +23,7 @@ Vue.component('markdown-editor', MarkdownEditor)
 #### Props
 | name | type | required | default | description |
 | :--- | ---- | ---------| ------- | ----------- |
-| name | `String` | `true` | `null` | The name of the textarea |
+| name | `String` | `false` | `null` | The name of the textarea |
 | content | `String` | `false` | `''` | Default content |
 | autosave | `Boolean` | `false` | `false` | If it should autosave |
 | autosaveSwitchVisible | `Boolean` | `false` | `true` | If the autosave switch should be shown in the bottom part of the editor |

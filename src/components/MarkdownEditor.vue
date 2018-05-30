@@ -10,7 +10,11 @@
         <div>
             <div v-show="activeTab == 'content'" id="markdown-editor">
                 <keep-alive>
-                    <autosize-textarea :name="name" :onChange="handleChange" :content="body" classes="textarea"></autosize-textarea>
+                    <autosize-textarea :value="body"
+                                       v-on:input="$emit('input', $event)"
+                                       class="textarea">
+
+                    </autosize-textarea>
                 </keep-alive>
 
                 <transition name="fade">
@@ -69,7 +73,7 @@
 
         model: {
           prop: 'content',
-          event: 'change'
+          event: 'input'
         },
 
         computed: {
@@ -99,16 +103,6 @@
         },
 
         methods: {
-            handleChange(e) {
-                this.body = e.target.value
-
-                this.$emit('change', this.body)
-
-                if (this.autosaveIsActive) {
-                    this.save()
-                }
-            },
-
             save: _.debounce(function() {
                 if (! this.autosaveUrl) {
                     return
@@ -161,7 +155,7 @@
             },
 
             name: {
-                required: true,
+                required: false,
                 type: String,
             },
 
@@ -176,7 +170,16 @@
                 },
 
             },
-        }
+        },
+      watch: {
+          content: function(newContent) {
+            this.body = newContent
+
+            if (this.autosaveIsActive) {
+              this.save()
+            }
+          }
+      }
     }
 </script>
 
