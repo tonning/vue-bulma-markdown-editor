@@ -1,15 +1,26 @@
 <template>
-    <textarea @input="onChange" :name="name" :class="classes" v-html="content"></textarea>
+    <textarea v-model="body" v-on:input="$emit('input', $event.target.value)">
+    </textarea>
 </template>
 
 <script>
     import autosize from 'autosize'
 
     export default {
+      name: 'AutosizeTextarea',
+      props: ['value'],
         mounted() {
             autosize(this.$el)
         },
-
-        props: ['classes', 'onChange', 'content', 'name'],
+      data: function () {
+        return {
+          body: this.value,
+        }
+      },
+      watch: {
+        value: function(newVal) {
+          this.body = newVal
+        }
+      }
     }
 </script>
