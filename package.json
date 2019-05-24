@@ -56,6 +56,6 @@
     "webpack": "3.6.0",
     "webpack-merge": "^4.1.0",
     "webpack-dev-server": "2.11.5",
-    "webpack-cli": "2.1.4"
+    "webpack-cli": "3.3.2"
   }
 }
