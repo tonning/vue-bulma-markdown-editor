@@ -42,7 +42,7 @@
     "babel-loader": "^7.1.2",
     "babel-runtime": "^6.26.0",
     "bulma": "^0.5.2",
-    "bulma-switch": "^0.0.3",
+    "bulma-switch": "^2.0.0",
     "css-loader": "^0.28.7",
     "lodash": "^4.17.4",
     "markdown-it": "^8.4.0",
