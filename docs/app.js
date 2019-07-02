@@ -1,10 +1,11 @@
 import Vue from 'vue'
-import { MarkdownEditor } from '../src'
+import App from './App'
 
 new Vue({
     el: '#app',
 
     components: {
-        MarkdownEditor,
-    }
+        App,
+    },
+    template: '<App/>'
 })
